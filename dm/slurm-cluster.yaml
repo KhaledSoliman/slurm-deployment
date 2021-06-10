@@ -26,8 +26,8 @@ resources:
       cluster_name: openlane-runner-slurm
       zone: us-central1-a
 
-      vpc_net: https://www.googleapis.com/compute/v1/projects/copper-array-312208/global/networks/default
-      vpc_subnet: default
+#      vpc_net: https://www.googleapis.com/compute/v1/projects/copper-array-312208/global/networks/default
+#      vpc_subnet: default
       external_controller_ip: True
       external_login_ips: True
       external_compute_ips: True
@@ -44,33 +44,32 @@ resources:
       controller_machine_type: n2-standard-2
       controller_disk_type: pd-standard
       controller_disk_size_gb: 50
-      controller_service_account: default
-      controller_scopes:
-        - https://www.googleapis.com/auth/cloud-platform
-      controller_labels:
-        - key1: controller
-      controller_secondary_disk         : False
-      controller_secondary_disk_type    : pd-standard
-      controller_secondary_disk_size_gb : 300
+#      controller_service_account: default
+#      controller_scopes:
+#        - https://www.googleapis.com/auth/cloud-platform
+#      controller_labels:
+#        - key1: controller
+#      controller_secondary_disk         : False
+#      controller_secondary_disk_type    : pd-standard
+#      controller_secondary_disk_size_gb : 300
 
       login_node_count: 1
       login_image: https://www.googleapis.com/compute/v1/projects/schedmd-slurm-public/global/images/schedmd-slurm-20-11-4-hpc-centos-7-2021-03-12-215000
       login_machine_type: n1-standard-2
       login_disk_type: pd-standard
       login_disk_size_gb: 50
-      login_labels:
-        - key1: login
-      login_node_service_account: default
-      login_node_scopes:
-        - https://www.googleapis.com/auth/monitoring.write
-        - https://www.googleapis.com/auth/logging.write
-
-      compute_node_service_account: default
-      compute_node_scopes:
-        - https://www.googleapis.com/auth/monitoring.write
-        - https://www.googleapis.com/auth/logging.write
+#      login_labels:
+#        - key1: login
+#      login_node_service_account: default
+#      login_node_scopes:
+#        - https://www.googleapis.com/auth/monitoring.write
+#        - https://www.googleapis.com/auth/logging.write
+#
+#      compute_node_service_account: default
+#      compute_node_scopes:
+#        - https://www.googleapis.com/auth/monitoring.write
+#        - https://www.googleapis.com/auth/logging.write
       suspend_time: 300
-      private_google_access: True
 
       # Optional network storage fields
       # network_storage is mounted on all instances
@@ -98,15 +97,8 @@ resources:
           compute_disk_type: pd-standard
           compute_disk_size_gb: 50
           max_node_count: 10
-          preemptible_bursting: True
-          enable_placement: False
+          preemptible_bursting: False
           static_node_count: 0
-#          gpu_type: nvidia-tesla-v100
-          gpu_count: 0
-          vpc_subnet: default
-          regional_capacity: False
-          region: us-central1
-
         - name: medium-load-designs
           zone: us-central1-a
           image: https://www.googleapis.com/compute/v1/projects/schedmd-slurm-public/global/images/schedmd-slurm-20-11-4-hpc-centos-7-2021-03-12-215000
@@ -115,15 +107,8 @@ resources:
           compute_disk_type: pd-standard
           compute_disk_size_gb: 50
           max_node_count: 10
-          preemptible_bursting: True
-          enable_placement: False
+          preemptible_bursting: False
           static_node_count: 0
-          #          gpu_type: nvidia-tesla-v100
-          gpu_count: 0
-          vpc_subnet: default
-          regional_capacity: False
-          region: us-central1
-
         - name: high-load-designs
           zone: us-central1-a
           image: https://www.googleapis.com/compute/v1/projects/schedmd-slurm-public/global/images/schedmd-slurm-20-11-4-hpc-centos-7-2021-03-12-215000
@@ -132,13 +117,6 @@ resources:
           compute_disk_type: pd-standard
           compute_disk_size_gb: 50
           max_node_count: 10
-          preemptible_bursting: True
-          enable_placement: False
+          preemptible_bursting: False
           static_node_count: 0
-          #          gpu_type: nvidia-tesla-v100
-          gpu_count: 0
-          vpc_subnet: default
-          regional_capacity: False
-          region: us-central1
-
   #  [END cluster_yaml]
