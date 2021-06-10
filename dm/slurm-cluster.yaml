@@ -64,7 +64,6 @@ resources:
         - https://www.googleapis.com/auth/devstorage.read_only
         - https://www.googleapis.com/auth/logging.write
 
-      private_google_access: True
       compute_node_service_account: default
       compute_node_scopes:
         - https://www.googleapis.com/auth/devstorage.read_only
@@ -96,60 +95,40 @@ resources:
           max_node_count    : 10
           static_node_count : 0
           zone              : us-central1-a
-          cpu_platform           : Intel Skylake
+#          cpu_platform           : Intel Skylake
           preemptible_bursting   : True
-          exclusive: False
-          enable_placement: False
+#          exclusive: False
+#          enable_placement: False
           compute_disk_type: pd-standard
           compute_disk_size_gb: 40
-          compute_labels:
-            - key1: compute
-            #          compute_image_family: custom-image
-            #          compute_image_family_project: custom-image's project
-          vpc_subnet: default
+#          vpc_subnet: default
           gpu_type: nvidia-tesla-v100
           gpu_count: 0
 
-        -   name: medium-load-designs
-            image: https://www.googleapis.com/compute/v1/projects/schedmd-slurm-public/global/images/schedmd-slurm-20-11-4-hpc-centos-7-2021-03-12-215000
-            image_hyperthreads: False
-            machine_type: c2-standard-8
-            max_node_count: 10
-            static_node_count: 0
-            zone: us-central1-a
-            cpu_platform: Intel Skylake
-            preemptible_bursting: True
-            exclusive: False
-            enable_placement: False
-            compute_disk_type: pd-standard
-            compute_disk_size_gb: 40
-            compute_labels:
-              - key1: compute
-          #            compute_image_family: custom-image
-          #            compute_image_family_project: custom-image's project
-            vpc_subnet: default
-            gpu_type: nvidia-tesla-v100
-            gpu_count: 0
+        - name: medium-load-designs
+          image: https://www.googleapis.com/compute/v1/projects/schedmd-slurm-public/global/images/schedmd-slurm-20-11-4-hpc-centos-7-2021-03-12-215000
+          image_hyperthreads: False
+          machine_type: n1-standard-2
+          max_node_count: 10
+          static_node_count: 0
+          zone: us-central1-a
+          preemptible_bursting: True
+          compute_disk_type: pd-standard
+          compute_disk_size_gb: 40
+          gpu_type: nvidia-tesla-v100
+          gpu_count: 0
 
-        -   name: high-load-designs
-            image: https://www.googleapis.com/compute/v1/projects/schedmd-slurm-public/global/images/schedmd-slurm-20-11-4-hpc-centos-7-2021-03-12-215000
-            image_hyperthreads: False
-            machine_type: c2-standard-16
-            max_node_count: 5
-            static_node_count: 0
-            zone: us-central1-a
-            cpu_platform: Intel Skylake
-            preemptible_bursting: True
-            exclusive: False
-            enable_placement: False
-            compute_disk_type: pd-standard
-            compute_disk_size_gb: 40
-            compute_labels:
-              - key1: compute
-          #            compute_image_family: custom-image
-          #            compute_image_family_project: custom-image's project
-            vpc_subnet: default
-            gpu_type: nvidia-tesla-v100
-            gpu_count: 0
+        - name: high-load-designs
+          image: https://www.googleapis.com/compute/v1/projects/schedmd-slurm-public/global/images/schedmd-slurm-20-11-4-hpc-centos-7-2021-03-12-215000
+          image_hyperthreads: False
+          machine_type: c2-standard-16
+          max_node_count: 5
+          static_node_count: 0
+          zone: us-central1-a
+          preemptible_bursting: True
+          compute_disk_type: pd-standard
+          compute_disk_size_gb: 40
+          gpu_type: nvidia-tesla-v100
+          gpu_count: 0
 
 #  [END cluster_yaml]
