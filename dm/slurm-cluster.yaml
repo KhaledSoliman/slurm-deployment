@@ -17,11 +17,11 @@
 
 # [Start]
 imports:
-  - path: schedmd-slurm-gcp.jinja
+  - path: slurm-cluster.jinja
 
 resources:
   - name: openlane-runner-slurm-cluster
-    type: schedmd-slurm-gcp.jinja
+    type: slurm-cluster.jinja
     properties:
       cluster_name: openlane-runner-slurm
       zone: us-central1-a
