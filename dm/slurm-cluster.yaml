@@ -44,7 +44,7 @@ resources:
       controller_scopes         :
         - https://www.googleapis.com/auth/cloud-platform
       controller_labels:
-        key1: controller
+        - key1: controller
       # controller_secondary_disk         : True
       # controller_secondary_disk_type    : pd-standard
       # controller_secondary_disk_size_gb : 300
@@ -55,7 +55,7 @@ resources:
       login_disk_size_gb        : 50
       external_login_ips        : True
       login_labels              :
-        key1 : login
+       - key1 : login
       login_node_count          : 0
       login_node_service_account: default
       login_node_scopes         :
@@ -101,7 +101,7 @@ resources:
           compute_disk_type: pd-standard
           compute_disk_size_gb: 40
           compute_labels:
-            key1: compute
+            - key1: compute
             #          compute_image_family: custom-image
             #          compute_image_family_project: custom-image's project
           vpc_subnet: default
@@ -121,7 +121,7 @@ resources:
             compute_disk_type: pd-standard
             compute_disk_size_gb: 40
             compute_labels:
-              key1: compute
+              - key1: compute
           #            compute_image_family: custom-image
           #            compute_image_family_project: custom-image's project
             vpc_subnet: default
@@ -141,7 +141,7 @@ resources:
             compute_disk_type: pd-standard
             compute_disk_size_gb: 40
             compute_labels:
-              key1: compute
+              - key1: compute
           #            compute_image_family: custom-image
           #            compute_image_family_project: custom-image's project
             vpc_subnet: default
