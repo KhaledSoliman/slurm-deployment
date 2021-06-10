@@ -108,6 +108,7 @@ resources:
           region: us-central1
 
         - name: medium-load-designs
+          zone: us-central1-a
           image: https://www.googleapis.com/compute/v1/projects/schedmd-slurm-public/global/images/schedmd-slurm-20-11-4-hpc-centos-7-2021-03-12-215000
           image_hyperthreads: False
           machine_type: c2-standard-8
@@ -124,6 +125,7 @@ resources:
           region: us-central1
 
         - name: high-load-designs
+          zone: us-central1-a
           image: https://www.googleapis.com/compute/v1/projects/schedmd-slurm-public/global/images/schedmd-slurm-20-11-4-hpc-centos-7-2021-03-12-215000
           image_hyperthreads: False
           machine_type: c2-standard-16
