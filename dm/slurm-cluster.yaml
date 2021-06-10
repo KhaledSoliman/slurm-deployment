@@ -64,9 +64,9 @@ resources:
 
       private_google_access: True
       compute_node_service_account: default
-      compute_node_scopes:
-        - https://www.googleapis.com/auth/devstorage.read_only
-        - https://www.googleapis.com/auth/logging.write
+#      compute_node_scopes:
+#        - https://www.googleapis.com/auth/devstorage.read_only
+#        - https://www.googleapis.com/auth/logging.write
       external_compute_ips: True
       suspend_time: 300
 
