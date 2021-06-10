@@ -12,9 +12,9 @@ resources:
     compute_external_ip: True
 
     netstore_enabled: False
-    netstore_server_ip: 
-    netstore_remote_mount: 
-    netstore_local_mount: 
+#    netstore_server_ip:
+#    netstore_remote_mount:
+#    netstore_local_mount:
     netstore_fs_type: nfs
     netstore_mount_options: defaults_netdev
 
