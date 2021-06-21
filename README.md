@@ -19,7 +19,6 @@ Also, join comunity discussions on either the
 
 
 # Contents
-
 * [Stand-alone Cluster in Google Cloud Platform](#stand-alone-cluster-in-google-cloud-platform)
   * [Install using GCP Marketplace](#install-using-gcp-marketplace)
   * [Install using Terraform](#install-using-terraform)
